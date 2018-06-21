@@ -5,26 +5,29 @@
     <title></title>
   </head>
   <body>
-    <script>
-     function ID(){
-       var lastname = document.getElementById('lastname').value;
-       var firstname = document.getElementById('firstname').value;
-       var city = document.getElementById('city').value;
-       alert ('Nom: ' + lastname + '\nPrénom: ' + firstname + '\nVille: ' + city);
-       if(/[a-zA-Z]/.test(lastname&&firstname&&city)){
-         alert('Nom: ' + lastname + '\nprénom: ' + firstname + '\nVille:' + city);
-       }
-       else {
-         alert('Recommencez');
-       }
-     }
 
-    </script>
-    <form onsubmit="ID()">
+    <form onsubmit="identity()">
            <label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname"/>
            <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname"/>
            <label for="city">Ville : </label><input type="text" name="city" id="city"/>
            <button  name="submit" id="submit">Valider</button>
     </form>
+    <script>
+    /*Déclaration fonction identité*/
+function identity() {
+/*Déclaration des variable*/
+ var lastname = document.getElementById('lastname').value;
+ var firstname = document.getElementById('firstname').value;
+ var city = document.getElementById('city').value;
+ var regex = /^[a-zA-Z\-éèêïäëîç]+$/;
+/*Boite de dialogue avec appel des variables*/
+ if((regex.test(lastname) == true) && (regex.test(firestname) == true) && (regex.test(city) == true)){
+   alert('Nom: ' + lastname + '\nPrenom: ' + firstname + '\nVille: ' + city);
+ }
+ else {
+   alert('Recommencez sans les chiffres et les caractères spéciaux.');
+ }
+ }
+    </script>
   </body>
 </html>
